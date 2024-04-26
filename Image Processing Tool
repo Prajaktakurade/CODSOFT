@@ -1,0 +1,21 @@
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+
+int main(){
+Mat image = imread("input_image.jpg");
+
+if(image.empty()){
+std::cerr<< "Error: Could not open or find the image!"<<std::endl;
+return -1;
+}
+
+Mat grayImage;
+cvtColor(image, grayImage, COLOR_BGR2GRAY);
+
+imwrite("output_image.jpg", grayImage);
+
+std::cout<< "Image processing completed. Grayscale image saved as output_image.jpg"<<std::endl;
+
+return 0;
+}
