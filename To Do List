@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main(){
+vector<string> todoList;
+string task;
+char choice;
+
+cout<< "Welcome to the To-Do List!"<<endl;
+
+do{
+cout<< "\n1.Add Task\n2. View Tasks\n3. Exit\n";
+cout<< "Enter your choice: ";
+cin>> choice;
+
+switch(choice){
+case '1':
+cout<< "Enter task to add: ";
+cin.ignore();
+getline(cin, task);
+todoList.push_back(task);
+cout<< "Task added successfully!"<<endl;
+break;
+case '2':
+if(todoList.empty()){
+cout<< "Your to=do list is empty."<<endl;
+}else{
+cout<< "Your to-do list:\n";
+for(size_t i=0; i< todoList.size(); ++i{
+cout<< i+1<< ". "<<todoList[i]<<endl;
+}
+}
+break;
+case '3':
+cout<< "Exiting program. Have a great day!" <<endl;
+break;
+default:
+cout<< "Invalid choice. Please try again."<<endl;}
+}while (choice != '3');
+
+return 0;
+}
