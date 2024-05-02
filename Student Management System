@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Student{
+private String name;
+private int age;
+private String id;
+
+public Student(String name, int age, String id){
+this.name = name;
+this.age = age;
+this.id = id;
+}
+
+public STring getName(){
+return name;
+}
+
+public int getAge(){
+return age;
+}
+
+public String getId(){
+return id;
+}
+
+public void displayInfo(){
+System.out.println("Name: " + name);
+System.out.println("Age: "+ age);
+System.out.println("ID: " + id);
+}
+}
+
+public class StudentManagementSystem(){
+students = new ArrayList<>();
+}
+
+public void addStudent(Student student){
+students.add(student);
+System.out.println(Students added successfully.");
+}
+
+public void removeStudent(String id){
+for(Student student : students){
+if(student.getId().equals(id)){
+students.remove(student);
+SYstem.out.println("Student removed successfully.");
+return;
+}
+}
+System.out.println("Student with ID" + id + "not found.");
+}
+
+public static void displayStudents(){
+for(Student student : students){
+student.displayInfo();
+System.out.println();
+}
+}
+
+public static void main(String[] args)
+Scanner scanner = new scanner(System.in);
+StudentManagementSystem sms = new StudentManagementSystem();
+
+while(true){
+System.out.println("Student Management System");
+System.out.println("1. Add Student");
+System.out.println("2. Remove Student");
+System.out.println("3. Display All Students");
+System.out.println(4. Exit");
+System.out.println("Enter your choice: ");
+
+int choice = scanner.nextInt();
+
+switch(choice){
+case 1:
+System.out.print("Enter student name: ");
+String name = scanner.next();
+System.out.print("Enter student age: ");
+int age = scanner.nextInt();
+System.out.print("Enter student ID: ");
+String id = scanner.next();
+sms.addStudent(new Student(name, age, id));
+break;
+case 2:
+System.out.print("Enter student ID to remove: ");
+String removeId = scanner.next();
+sms.removeStudent(removeId);
+break;
+case 3:
+sms.displayAllStudents();
+break;
+case 4:
+System.out.println("Exiting program. Goodbye!");
+System.exit(0);
+break;
+default:
+System.out.println("Invalid choice. Please try again.");
+}
+}
+}
+}
