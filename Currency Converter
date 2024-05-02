@@ -1,0 +1,33 @@
+import java.uitl.Scanner;
+
+public class CurrencyConverter{
+public static void main(String[] args){
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("Welcome to Currency Converter!");
+System.out.println("1. USD to EUR");
+System.out.println("2. EUR to USD");
+System.out.println("Enter your choice: "(;
+
+int choice = scanner.nextInt();
+switch(choice){
+case 1:
+convertUSDtoEUR(scanner);
+break;
+case 2:
+convertEURtoUSD(scanner);
+break;
+default:
+System.out.println("Invalid choice."(;
+}
+sccanner.close();
+}
+
+public static void convertUSDtoEUR(Scanner scanner){
+System.out.print("Enter the amount in USD: ");
+double usdAmount = scanner.nextDouble();
+double eurAmount = usdAmount * 0.82;
+
+System.out.println(usdAmount + " EUR is equal to " + usdAmount + " USD");
+}
+}
